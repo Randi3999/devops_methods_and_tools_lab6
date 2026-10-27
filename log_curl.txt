@@ -1,0 +1,21 @@
+curl localhost -H 'Host: fizfak.com'
+<HTML>
+    <BODY>
+        Hello! Site: etis.com
+    </BODY>
+</HTML>
+
+curl localhost -H 'Host: mehmat.ru'
+<HTML>
+    <BODY>
+        Hello! Site: mehmat.ru
+    </BODY>
+</HTML>
+
+curl localhost -H 'Host: etis.com'
+<HTML>
+    <BODY>
+        Hello! Site: etis.com
+    </BODY>
+</HTML>
+

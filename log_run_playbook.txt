@@ -1,0 +1,32 @@
+╰─ ./run_playbook.sh                                                                               ─╯
+BECOME password:
+
+PLAY [lab6] ******************************************************************************************
+
+TASK [Gathering Facts] *******************************************************************************
+[WARNING]: Host 'localhost' is using the discovered Python interpreter at '/usr/bin/python3.14', but future installation of another Python interpreter could cause a different interpreter to be discovered. See https://docs.ansible.com/ansible-core/2.21/reference_appendices/interpreter_discovery.html for more information.
+ok: [localhost]
+
+TASK [nginx-vhosts : Check install nginx] ************************************************************
+ok: [localhost]
+
+TASK [nginx-vhosts : Install nginx(if he dont install)] **********************************************
+skipping: [localhost]
+
+TASK [nginx-vhosts : copy nginx config from template] ************************************************
+[ERROR]: Task failed: Module failed: Destination directory /etc/nginx/conf.d does not exist
+Origin: /home/r357699/devops/dev/lab6/roles/nginx-vhosts/tasks/main.yml:13:3
+
+11   when: nginx_check.rc != 0
+12
+13 - name: copy nginx config from template
+     ^ column 3
+
+failed: [localhost] (item=mehmat.ru) => {"ansible_loop_var": "item", "changed": false, "checksum": "43e9027381984c032c4c0e7a119dc648ad6a984c", "item": "mehmat.ru", "msg": "Destination directory /etc/nginx/conf.d does not exist"}
+failed: [localhost] (item=fizfak.ru) => {"ansible_loop_var": "item", "changed": false, "checksum": "1153dcfdbae7aece8d97658b426921f28159d6da", "item": "fizfak.ru", "msg": "Destination directory /etc/nginx/conf.d does not exist"}
+failed: [localhost] (item=etis.com) => {"ansible_loop_var": "item", "changed": false, "checksum": "5dcc5b8f98329a83a5a353907705225333a253fa", "item": "etis.com", "msg": "Destination directory /etc/nginx/conf.d does not exist"}
+
+PLAY RECAP *******************************************************************************************
+localhost                  : ok=2    changed=0    unreachable=0    failed=1    skipped=1    rescued=0    ignored=0
+
+

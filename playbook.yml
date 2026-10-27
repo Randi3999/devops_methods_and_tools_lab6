@@ -1,0 +1,12 @@
+- name: lab6
+  hosts: local
+  become: true
+
+  vars:
+    sites:
+      - "mehmat.ru"
+      - "fizfak.ru"
+      - "etis.com"
+
+  roles:
+    - nginx-vhosts
